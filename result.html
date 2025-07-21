@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Result | QuizEra</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fb;
+      padding: 2rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      height: 50px;
+    }
+    .result-wrapper {
+      margin-top: 2rem;
+    }
+    .score-box {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    button{
+      margin:8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f1f1;
+    }
+    .correct { color: green; font-weight: bold; }
+    .wrong { color: red; font-weight: bold; }
+  </style>
+</head>
+<body id="result-page">
+  <header>
+    <img src="assets/image/logo.png" alt="Quizera Logo" class="logo" />
+    <a href="php/leaderboard.php" class="admin-link">🏆 Leaderboard</a>
+    <button id="themeToggle" title="Toggle light/dark mode">🌓</button>
+  </header>
+
+  <main class="result-wrapper">
+    <h1>Your Result</h1>
+
+    <div class="score-box">
+      <div id="score-text"></div>
+      <p>Thank you for playing QuizEra!</p>
+      <button onclick="location.href='index.php'">🏠 Back to Home</button>
+    </div>
+
+    <div id="review-section">
+      <h2>📝 Answer Review</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+          </tr>
+        </thead>
+        <tbody id="review-table-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/result.js"></script>
+</body>
+</html>

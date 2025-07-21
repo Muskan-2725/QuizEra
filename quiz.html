@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuizEra | Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #themeToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="quiz-header">
+  <div class="left-header">
+    <img src="assets/image/logo.png" alt="QuizEra Logo" class="logo" />
+    <button id="themeToggle" title="Toggle light/dark mode">🌓</button>
+  </div>
+
+  <div class="center-header">
+    <h1>QuizEra Quiz</h1>
+    <div id="timer">Time Left: 60s</div>
+  </div>
+</header>
+
+  <!-- Main Quiz Container -->
+  <main class="quiz-container">
+    <div id="question-box">
+      <!-- Question will be inserted here -->
+    </div>
+    <div id="options-box">
+      <!-- Options will be inserted here -->
+    </div>
+
+    <div class="navigation">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+      <button id="submitBtn">Submit</button>
+    </div>
+  </main>
+
+  <script src="js/quiz.js"></script>
+  <script src="js/theme.js"></script>
+  <!-- TEMP debug: show username -->
+   <script>
+  fetch("php/check-session.php", { credentials: 'include' })
+    .then(res => res.text())
+    .then(res => console.log("Session status:", res));
+</script>
+
+</body>
+</html>
